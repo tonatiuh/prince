@@ -23,6 +23,7 @@ Prince.attack = function(){
     var $list = $containers.find('.js-container');
     _.each($list, function(container){
       var $container = $(container);
+      var $progress  = $container.find('.progress');
       var $report    = $container.find('.js-report');
       var $attack    = $container.find('.js-attack');
       var $time      = $container.find('.js-duration');
@@ -43,12 +44,27 @@ Prince.attack = function(){
 
       $attack.click(function(event){
         event.preventDefault();
+        $progress.removeClass('hide');
+        var data = $container.data();
+        var $bar = $progress.find('.progress-bar');
+        console.log(data);
 
-        var request = $.ajax({
+        var percentage = 0;
+        var request    = $.ajax({
           method : 'POST',
           url    : '/attack',
-          data   : $container.data()
+          data   : data
         });
+
+        var timer = setInterval(function(){
+          if(percentage === 100){
+            percentage = 0; clearInterval(timer);
+          }else{
+            percentage = percentage + (10 / data.time);
+            $bar.attr('style', 'min-width: '+percentage+'%;');
+            $bar.text(percentage + "%");
+          }
+        }, 100);
 
         //Attacking !
         $time.prop('disabled', true);
@@ -56,6 +72,9 @@ Prince.attack = function(){
         $attack.prop('disabled', true);
 
         request.success(function(response){
+          percentage = 0;
+          clearInterval(timer);
+          $progress.addClass('hide');
           $report[0].contentDocument.location.reload(true);
           $mainReport[0].contentDocument.location.reload(true);
           $time.prop('disabled', false);
