@@ -1,0 +1,13 @@
+{
+
+  "scripts" : {
+    "start" : "node server"
+  },
+
+  "dependencies" : {
+    "express"     : "4.13.x",
+    "ejs"         : "2.4.x",
+    "body-parser" : "1.15.x",
+    "underscore"  : "1.8.x"
+  }
+}
