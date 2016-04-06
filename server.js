@@ -16,7 +16,7 @@ app.get('/', function(req, res){ return res.render('index.html'); });
 app.get('/attack', function(req, res){ return res.render('attack.html'); });
 
 app.get('/enemy', function(req, res){
-  var blackList = ['.DS_Store'];
+  var blackList = ['.DS_Store', '.keep'];
   var directory = path.join(process.cwd(), 'enemies');
   var folders   = fs.readdirSync(directory);
 
