@@ -1,0 +1,5 @@
+{
+  "ssl"  : false,
+  "port" : 3330,
+  "logs" : "./log/current.log"
+}

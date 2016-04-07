@@ -1,0 +1,36 @@
+{"level":"info","message":"[Server Service] Initialize server","timestamp":"2016-04-07T18:24:36.233Z"}
+{"level":"info","message":"[Lib Server] Creating http server","timestamp":"2016-04-07T18:24:36.299Z"}
+{"address":"::","family":"IPv6","port":3330,"level":"info","message":"[Lib Server] Server running: ","timestamp":"2016-04-07T18:24:36.311Z"}
+{"level":"info","message":"[Server Service] Initialize server","timestamp":"2016-04-07T18:26:48.165Z"}
+{"level":"info","message":"[Lib Server] Creating http server","timestamp":"2016-04-07T18:26:48.227Z"}
+{"address":"::","family":"IPv6","port":3330,"level":"info","message":"[Lib Server] Server running: ","timestamp":"2016-04-07T18:26:48.241Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  / ::1","timestamp":"2016-04-07T18:28:00.718Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  / ::1","timestamp":"2016-04-07T18:28:02.140Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  / ::1","timestamp":"2016-04-07T18:28:02.737Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  / ::1","timestamp":"2016-04-07T18:28:04.913Z"}
+{"level":"info","message":"[Server Service] Initialize server","timestamp":"2016-04-07T18:28:18.463Z"}
+{"level":"info","message":"[Lib Server] Creating http server","timestamp":"2016-04-07T18:28:18.644Z"}
+{"address":"::","family":"IPv6","port":3330,"level":"info","message":"[Lib Server] Server running: ","timestamp":"2016-04-07T18:28:18.656Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  / ::1","timestamp":"2016-04-07T18:28:20.786Z"}
+{"level":"info","message":"[Server Service] Initialize server","timestamp":"2016-04-07T18:29:40.947Z"}
+{"level":"info","message":"[Lib Server] Creating http server","timestamp":"2016-04-07T18:29:40.998Z"}
+{"address":"::","family":"IPv6","port":3330,"level":"info","message":"[Lib Server] Server running: ","timestamp":"2016-04-07T18:29:41.006Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  / ::1","timestamp":"2016-04-07T18:29:42.718Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  /enemy ::1","timestamp":"2016-04-07T18:29:42.948Z"}
+{"level":"info","message":"[Server Service] Initialize server","timestamp":"2016-04-07T18:36:18.536Z"}
+{"level":"info","message":"[Lib Server] Creating http server","timestamp":"2016-04-07T18:36:18.584Z"}
+{"address":"::","family":"IPv6","port":3330,"level":"info","message":"[Lib Server] Server running: ","timestamp":"2016-04-07T18:36:18.606Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  / ::1","timestamp":"2016-04-07T18:36:23.227Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  /enemy ::1","timestamp":"2016-04-07T18:36:23.354Z"}
+{"level":"info","message":"[Server Service] Initialize server","timestamp":"2016-04-07T18:39:15.584Z"}
+{"level":"info","message":"[Lib Server] Creating http server","timestamp":"2016-04-07T18:39:15.651Z"}
+{"address":"::","family":"IPv6","port":3330,"level":"info","message":"[Lib Server] Server running: ","timestamp":"2016-04-07T18:39:15.672Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  /attack ::1","timestamp":"2016-04-07T18:39:33.403Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  /attack ::1","timestamp":"2016-04-07T18:39:34.841Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  /attack ::1","timestamp":"2016-04-07T18:39:39.015Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  /attack ::1","timestamp":"2016-04-07T18:39:39.024Z"}
+{"level":"info","message":"[Server Service] Initialize server","timestamp":"2016-04-07T18:39:57.435Z"}
+{"level":"info","message":"[Lib Server] Creating http server","timestamp":"2016-04-07T18:39:57.469Z"}
+{"address":"::","family":"IPv6","port":3330,"level":"info","message":"[Lib Server] Server running: ","timestamp":"2016-04-07T18:39:57.485Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  /attack ::1","timestamp":"2016-04-07T18:40:03.043Z"}
+{"level":"info","message":"[Middleware] Incomming Request:  /attack ::1","timestamp":"2016-04-07T18:40:03.055Z"}
