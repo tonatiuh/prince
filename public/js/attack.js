@@ -57,9 +57,7 @@ Prince.attack = function(){
         });
 
         var timer = setInterval(function(){
-          if(percentage === 100){
-            percentage = 0; clearInterval(timer);
-          }else{
+          if(percentage > 90){ clearInterval(timer); }else{
             percentage = percentage + (10 / data.time);
             $bar.attr('style', 'min-width: '+percentage+'%;');
             $bar.text(percentage + "%");

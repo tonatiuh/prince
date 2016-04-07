@@ -1,7 +1,7 @@
 var express    = require('express');
 var bodyParser = require('body-parser');
 var app        = express();
-var exec       = require('child_process').exec;
+var spawn      = require('child_process').spawn;
 var fs         = require('fs');
 var path       = require('path');
 var _          = require('underscore');
@@ -60,7 +60,8 @@ app.post('/attack', function(req, res){
 
   name = name.replace(/ /g, '_');
   var host   = path.join(process.cwd(), '/enemies/', name, '/host');
-  exec("vegeta attack -targets="+host+" -rate="+rate+" -duration="+time+"s | vegeta report -reporter=plot -output=public/reports/"+name+".html", function(error){
+  var attack = spawn('sh', ['-c', "vegeta attack -targets="+host+" -rate="+rate+" -duration="+time+"s | vegeta report -reporter=plot -output=public/reports/"+name+".html"], { stdio: 'inherit' });
+  attack.on('close', function(){
     return res.send('done');
   });
 });
