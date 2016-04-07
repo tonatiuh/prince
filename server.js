@@ -56,7 +56,7 @@ app.post('/attack', function(req, res){
   var time     = req.body.time;
   var rate     = req.body.rate;
   var name     = req.body.name;
-  if(!time || !rate || !name){ return res.send(400).send('Missing Information'); }
+  if(!time || !rate || !name){ return res.status(400).send('Missing Information'); }
 
   name = name.replace(/ /g, '_');
   var host   = path.join(process.cwd(), '/enemies/', name, '/host');
