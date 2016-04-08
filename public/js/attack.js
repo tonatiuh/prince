@@ -1,7 +1,8 @@
 Prince.attack = function(){
-  var $attackAll  = $('#js-attack-all');
-  var $containers = $('#containers');
-  var $mainReport = $('#mainReport');
+  var $attackAll       = $('#js-attack-all');
+  var $containers      = $('#containers');
+  var $mainReport      = $('#mainReport');
+  var $mainReportTitle = $('.main-title');
 
   /*
    * Attack All
@@ -23,7 +24,7 @@ Prince.attack = function(){
     $attackAllButton.prop('disabled', true);
     var data = $attackAllButton.data();
 
-    var $list = $containers.find('.js-container');
+    var $list = $containers.find('.js-container-item');
     _.each($list, function(el){
       var $el = $(el);
       $el.data(data);
@@ -51,7 +52,7 @@ Prince.attack = function(){
    * Hanlders
    * */
   function setEvents(){
-    var $list = $containers.find('.js-container');
+    var $list = $containers.find('.js-container-item');
     _.each($list, function(container){
       var $container = $(container);
       var $progress  = $container.find('.progress');
@@ -67,8 +68,11 @@ Prince.attack = function(){
         $('.bg-info').removeClass('bg-info');
         $container.addClass('bg-info');
         $mainReport[0].contentDocument.location.reload(true);
-        var name = $container.attr('data-name');
+        var name   = $container.attr('data-name');
+        var planet = $container.attr('data-planet');
         $mainReport.attr('src', 'reports/'+name+'.html');
+        $mainReportTitle.find('.name').text(name);
+        $mainReportTitle.find('.planet').text("("+planet+")");
       });
 
       $container.on('enableAttack', function(){ $attack.prop('disabled', !($container.data().time && $container.data().rate)); });
