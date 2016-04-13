@@ -41,7 +41,7 @@ module.exports = {
 
     var folder = path.join(directory, name);
     fs.mkdirSync(folder);
-    fs.writeFileSync(folder + '/host', 'GET ' + planet); //TODO
+    fs.writeFileSync(folder + '/host', planet);
     return res.send('Saved');
   }
 

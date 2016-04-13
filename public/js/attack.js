@@ -66,7 +66,7 @@ Prince.attack = function(){
 
       $container.click(function(){
         $('.bg-info').removeClass('bg-info');
-        $container.addClass('bg-info');
+        $container.find('.controls').addClass('bg-info');
         $mainReport[0].contentDocument.location.reload(true);
         var name   = $container.attr('data-name');
         var planet = $container.attr('data-planet');

@@ -1,10 +1,19 @@
 <head>
-  <script src="/js/jquery.js"></script>
-  <script src="/js/underscore.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="/js/vendor/jquery.js"></script>
+  <script src="/js/vendor/underscore.js"></script>
+  <script src="/js/vendor/backbone.js"></script>
+  <script src="/js/vendor/bootstrap.min.js"></script>
 
-  <script src="/js/index.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/router.js"></script>
+
+  <script src="/js/views/homeContainer.js"></script>
+  <script src="/js/views/addEnemy.js"></script>
+  <script src="/js/views/enemyList.js"></script>
+
+  <script src="/js/models/enemy.js"></script>
+
+  <script src="/js/collections/enemies.js"></script>
 
   <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/hover.css" rel="stylesheet">
@@ -37,31 +46,31 @@
 
   <div class="row">
 
-    <div class="col-md-3 add-enemy">
+    <div class="col-md-3 js-add-enemy">
       <h3 class="text-center">Add a new enemy</h3>
       <form id="js-add" class="form-horizontal">
         <div class="form-group">
           <label class="col-sm-2 control-label">Name</label>
           <div class="col-sm-10">
-            <input class="form-control js-name" placeholder="Freezer">
+            <input class="form-control js-add-enemy-name" placeholder="Freezer">
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-2 control-label">Planet</label>
           <div class="col-sm-10">
-            <input class="form-control js-planet" placeholder="http://namek.com">
+            <input class="form-control js-add-enemy-planet" placeholder="http://namek.com">
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default js-add" disabled >Add</button>
+            <button type="submit" class="btn btn-default js-add-enemy-add" disabled >Add</button>
           </div>
         </div>
       </form>
     </div>
 
     <div class="col-md-7">
-      <table id="js-list" class="table table-hover">
+      <table id="js-enemy-list" class="table table-hover">
         <thead>
           <tr>
             <th>Name</th>
@@ -69,7 +78,7 @@
             <th>Attack</th>
           </tr>
         </thead>
-        <tbody class="list"> </tbody>
+        <tbody class="list"></tbody>
       </table>
     </div>
 
@@ -79,8 +88,8 @@
 
   </div>
 
-  <script type="text/template" id="list-template">
-    <tr>
+  <script type="text/template" id="list-item-template">
+    <tr data-id="{{cid}}">
       <td>{{ name }}</td>
       <td>{{ planet }}</td>
       <td>

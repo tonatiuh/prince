@@ -1,4 +1,4 @@
-.add-enemy{
+.js-add-enemy{
 	border-right: 2px solid #999;
 }
 
@@ -8,9 +8,8 @@
 }
 
 
-.list-drop-item button{
-  /*width: 104%;*/
-  /*height : 40px;*/
+.js-container .js-attack{
+  margin-top: 25px;
 }
 
 .main-title{

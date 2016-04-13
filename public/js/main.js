@@ -1,12 +1,16 @@
 var Prince = {
-  Initialize : function(){
-    var controller = window.location.pathname.slice(1, window.location.pathname.length);
-    (controller) || (controller = 'index');
-    Prince[controller]();
+  Models      : {},
+  Collections : {},
+  Views       : {},
+
+  Init : function(){
+    Prince.router = new Prince.Router();
+    Backbone.history.start();
   }
 };
+
+$(Prince.Init);
 
 _.templateSettings = {
   interpolate: /\{\{(.+?)\}\}/g
 };
-$(Prince.Initialize);
