@@ -3,7 +3,8 @@ Prince.Models.Enemy = Backbone.Model.extend({
 
   defaults : {
     name   : '',
-    planet : ''
+    planet : '',
+    active : false
   },
 
   initialize: function(){
