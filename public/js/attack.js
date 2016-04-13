@@ -24,7 +24,7 @@ Prince.attack = function(){
     $attackAllButton.prop('disabled', true);
     var data = $attackAllButton.data();
 
-    var $list = $containers.find('.js-container-item');
+    var $list = $containers.find('.js-container');
     _.each($list, function(el){
       var $el = $(el);
       $el.data(data);
@@ -52,7 +52,7 @@ Prince.attack = function(){
    * Hanlders
    * */
   function setEvents(){
-    var $list = $containers.find('.js-container-item');
+    var $list = $containers.find('.js-container');
     _.each($list, function(container){
       var $container = $(container);
       var $progress  = $container.find('.progress');

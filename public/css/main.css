@@ -9,8 +9,8 @@
 
 
 .list-drop-item button{
-  width: 104%;
-  height : 40px;
+  /*width: 104%;*/
+  /*height : 40px;*/
 }
 
 .main-title{
@@ -19,21 +19,11 @@
   margin: 30px 0 0 80px;
 }
 
-#containers{
-  width: 30%;
-  height : 500px;
-  overflow: scroll;
-  float: left;
+ul#containers{
+    white-space: nowrap;
+    overflow-x: auto;
 }
-
-.js-container{
-  width: 100%;
-  padding-top: 15px;
-  height : 200px;
-  overflow : scroll;
-}
-
-.main-report{
-  float: right;
-  width : 72%;
+li.js-container{
+    display: inline-block;
+    float: none;
 }
