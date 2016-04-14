@@ -50,6 +50,7 @@ Prince.Views.ItemView = Backbone.View.extend({
 
     var data = {
       name    : this.model.get('name'),
+      host    : this.model.get('planet'),
       time    : $.trim(this.$time.val()),
       rate    : $.trim(this.$rate.val()),
       content : content

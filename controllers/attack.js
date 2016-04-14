@@ -3,12 +3,26 @@
 const Logger   = require('../lib/logger');
 const path     = require('path');
 const spawn    = require('child_process').spawn;
+const _        = require('underscore');
 
 //TODO Log, refactor
 module.exports = {
   index : function(req, res){ return res.render('attack.html'); },
 
   attack: function(req, res){
+    var host = req.body.host;//XXX
+    var name = req.body.name;//XXX
+    var root = path.join(process.cwd(), '/enemies/', name);
+
+    _.each(req.body.content, function(data){
+      var headers = JSON.parse(data.headers); //XXX try catch
+      var reqBody = '@' + path.join(root, data.endpoint) + '.json'; // XXX trye catch
+
+      console.log(data.method + ' ' + host + data.endpoint);
+      console.log(headers); // Iterate each with \n
+      console.log(reqBody);
+    });
+
     return res.status(200).send('Working on it');
     //var time     = req.body.time;
     //var rate     = req.body.rate;
