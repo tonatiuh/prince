@@ -6,7 +6,9 @@ Prince.Views.ItemView = Backbone.View.extend({
     'keyup .js-duration'    : 'enable',
     'keyup .js-rate'        : 'enable',
     'click .js-attack'      : 'attack',
-    'click .js-add-content' : 'addContent'
+    'click .js-add-content' : 'addContent',
+    'keyup [body]'          : 'checkBody',
+    'focusout [body]'       : 'addHeader'
   },
 
   initialize : function(){
@@ -15,6 +17,38 @@ Prince.Views.ItemView = Backbone.View.extend({
     this.$rate   = this.$el.find('.js-rate');
     this.$attack = this.$el.find('.js-attack');
     this.$report = this.$el.find('.js-report');
+  },
+
+  checkBody : function(event){
+    var body = event.currentTarget.value;
+
+    try{
+      body = JSON.parse(body);
+      event.currentTarget.valid = true;
+    }catch(error){
+      event.currentTarget.valid = false;
+    }
+  },
+
+  addHeader : function(event){
+    var $el = $(event.currentTarget);
+    $el.removeClass('bg-danger');
+
+    if(!event.currentTarget.valid){
+      $el.addClass('bg-danger'); return false;
+    }
+
+    var $headers = $el.parents('tr').find('[headers]');
+    var headers  = $headers.val();
+
+    try{
+      headers = JSON.parse(headers);
+    }catch(error){
+      $headers.val('["Content-Type: application/json"]');
+    }
+
+    if(!_.contains(headers, "Content-Type: application/json")){ headers.push("Content-Type: application/json"); }
+    $headers.val(JSON.stringify(headers));
   },
 
   block : function(){

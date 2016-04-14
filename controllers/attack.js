@@ -9,8 +9,6 @@ const url      = require('url');
 
 let utils = require('../lib/utils');
 
-//TODO Log, refactor
-// Content-Type: application/json
 module.exports = {
   index : function(req, res){ return res.render('attack.html'); },
 
