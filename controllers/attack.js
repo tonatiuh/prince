@@ -22,6 +22,7 @@ module.exports = {
     let document = fs.createWriteStream( root + '/target');
 
     _.each(req.body.content, function(data){
+      if(!data.method || !data.endpoint){ return false; }
 
       let reqBody  = '@' + path.join(root, data.endpoint) + '.json';
       let rawHeaders;
