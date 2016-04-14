@@ -44,6 +44,7 @@ Prince.Views.ItemView = Backbone.View.extend({
     try{
       headers = JSON.parse(headers);
     }catch(error){
+      headers = [];
       $headers.val('["Content-Type: application/json"]');
     }
 
@@ -75,10 +76,13 @@ Prince.Views.ItemView = Backbone.View.extend({
   attack : function(){
     var content = _.map(this.$list.find('tr'), function(element){
       var $info = $(element);
+      var $body = $info.find('[body]');
+      var body  = $body[0].valid ? $body.val() : "{}";
+
       return {
         method   : $info.find('[method]').val(),
         endpoint : $info.find('[endpoint]').val(),
-        body     : $info.find('[body]').val(),
+        body     : body,
         headers  : $info.find('[headers]').val()
       };
     });
