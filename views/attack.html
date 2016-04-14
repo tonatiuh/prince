@@ -5,7 +5,19 @@
   <script src="/js/vendor/bootstrap.min.js"></script>
 
   <script src="/js/main.js"></script>
-  <script src="/js/attack.js"></script>
+  <script src="/js/router.js"></script>
+
+  <script src="/js/views/enemyRender.js"></script>
+  <script src="/js/views/homeContainer.js"></script>
+  <script src="/js/views/attackContainer.js"></script>
+  <script src="/js/views/addEnemy.js"></script>
+  <script src="/js/views/homeEnemyList.js"></script>
+  <script src="/js/views/attackEnemyList.js"></script>
+  <script src="/js/views/itemView.js"></script>
+
+  <script src="/js/models/enemy.js"></script>
+
+  <script src="/js/collections/enemies.js"></script>
 
   <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/hover.css" rel="stylesheet">
@@ -68,10 +80,9 @@
   </div>
 
 
-  <script type="text/template" id="container-template">
+  <script type="text/template" id="list-item-template">
 
-
-    <li class="col-md-8 js-container hvr-border-fade" data-name="{{name}}" data-planet="{{planet}}">
+    <li class="col-md-8 js-container hvr-border-fade" data-name="{{name}}" data-planet="{{planet}}" data-id="{{cid}}">
       <div class="progress hide" style="margin:10px 0 0 10px">
         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 0%;"> 0% </div>
       </div>
@@ -90,11 +101,12 @@
         </div>
       </div>
 
-      <div>
-        <h4>Endpoints <small><button type="submit" class="btn btn-info btn-sm">Add</button></small></h3>
+      <div class="js-attack-content">
+        <h4>Endpoints <small><button type="submit" class="btn btn-info btn-sm js-add-content">Add</button></small></h3>
         <table id="js-list" class="table table-hover">
           <thead>
             <tr>
+              <th>Method</th>
               <th>Name</th>
               <th>Body</th>
               <th>Headers</th>
@@ -103,13 +115,16 @@
           <tbody class="list">
            <tr>
             <td>
-             <input placeholder="/"></input>
+              <input method placeholder="GET" value="GET"></input>
             </td>
             <td>
-             <input placeholder="{}"></input>
+              <input endpoint placeholder="/" value="/"></input>
             </td>
             <td>
-             <input placeholder="[]"></input>
+              <input body placeholder="{}" value="{}"></input>
+            </td>
+            <td>
+              <input headers placeholder="[]" value="[]"></input>
             </td>
            </tr>
           </tbody>
@@ -121,6 +136,5 @@
       </div>
     </li>
   </script>
-
 
 </body>

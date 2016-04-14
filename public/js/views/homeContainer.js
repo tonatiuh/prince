@@ -12,7 +12,7 @@ Prince.Views.HomeContainer = Backbone.View.extend({
       collection : this.collection
     });
 
-    this.list = new Prince.Views.EnemyList({
+    this.list = new Prince.Views.HomeEnemyList({
       el         : '#js-enemy-list',
       collection : this.collection
     });

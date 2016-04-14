@@ -5,7 +5,7 @@ var Prince = {
 
   Init : function(){
     Prince.router = new Prince.Router();
-    Backbone.history.start();
+    Backbone.history.start({ pushState: true, root: "/" });
   }
 };
 

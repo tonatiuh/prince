@@ -7,6 +7,16 @@
   margin: 0 0 3em 0;
 }
 
+.js-attack-content{
+  width: 600px;
+  overflow: scroll;
+}
+
+
+.js-container{
+  height: 500px;
+  overflow: scroll;
+}
 
 .js-container .js-attack{
   margin-top: 25px;
