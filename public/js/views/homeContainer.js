@@ -27,7 +27,9 @@ Prince.Views.HomeContainer = Backbone.View.extend({
 
   attack : function(){
     var enemies = _.map(this.collection.where({active : true}), function(enemy){
-      return enemy.toJSON();
+      enemy      = enemy.toJSON();
+      enemy.name = enemy.name.replace(/ /g, '_');
+      return enemy;
     });
 
     localStorage.setItem('enemies', JSON.stringify(enemies));
