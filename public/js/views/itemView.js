@@ -14,6 +14,7 @@ Prince.Views.ItemView = Backbone.View.extend({
     this.$time   = this.$el.find('.js-duration');
     this.$rate   = this.$el.find('.js-rate');
     this.$attack = this.$el.find('.js-attack');
+    this.$report = this.$el.find('.js-report');
   },
 
   block : function(){
@@ -62,12 +63,13 @@ Prince.Views.ItemView = Backbone.View.extend({
       data   : data
     });
 
-    request.success(this.unblock.bind(this));
+    request.success(this.onSuccess.bind(this));
     this.block();
-  }
+  },
 
-  //onSuccess : function(){
-    //console.log(arguments);
-  //}
+  onSuccess : function(){
+    this.unblock.call(this);
+    this.$report[0].contentDocument.location.reload(true);
+  }
 
 });
